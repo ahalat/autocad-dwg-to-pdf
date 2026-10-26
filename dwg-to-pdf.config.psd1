@@ -105,7 +105,7 @@
 
         # TRUE previews planned output paths without publishing.
         # Change to FALSE only after checking the preview.
-        DryRun = $true
+        DryRun = $false
 
         # Maximum number of candidate revisions checked in AUTO mode.
         MaxAutoRevision = 999

@@ -10,7 +10,7 @@ if ([string]::IsNullOrWhiteSpace($scriptDirectory)) {
     $scriptDirectory = (Get-Location).Path
 }
 if ([string]::IsNullOrWhiteSpace($ConfigPath)) {
-    $ConfigPath = Join-Path $scriptDirectory "DWG_TO_PDF.config.psd1"
+    $ConfigPath = Join-Path $scriptDirectory "dwg-to-pdf.config.psd1"
 }
 
 $ErrorActionPreference = "Stop"
