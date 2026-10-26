@@ -808,7 +808,7 @@ foreach ($dwg in $dwgFiles) {
 $recordsArray = @($records.ToArray())
 if ($recordsArray.Count -eq 0) {
     Write-Host "No drawings could be scanned." -ForegroundColor Red
-    if (!$NoPause) { Read-Host "Press Enter to exit" }
+    
     exit 1
 }
 
@@ -829,7 +829,7 @@ catch {
             Remove-Item $jobDir -Recurse -Force -ErrorAction SilentlyContinue
         }
     }
-    if (!$NoPause) { Read-Host "Press Enter to exit" }
+    
     exit 1
 }
 
@@ -849,7 +849,7 @@ catch {
             Remove-Item $jobDir -Recurse -Force -ErrorAction SilentlyContinue
         }
     }
-    if (!$NoPause) { Read-Host "Press Enter to exit" }
+    
     exit 1
 }
 
@@ -865,7 +865,7 @@ if ($script:Config.Publishing.DryRun) {
         Remove-Item $jobDir -Recurse -Force -ErrorAction SilentlyContinue
     }
     Write-Host "Finished preview."
-    if (!$NoPause) { Read-Host "Press Enter to exit" }
+    
     if ($failed -gt 0) { exit 1 } else { exit 0 }
 }
 
@@ -916,5 +916,5 @@ Write-Host "Batch finished." -ForegroundColor Green
 Write-Host "Drawings published: $success"
 Write-Host "Drawings failed or skipped during scan: $failed"
 Write-Host "Output folder: $outputFolder"
-if (!$NoPause) { Read-Host "Press Enter to exit" }
+
 if ($failed -gt 0) { exit 1 } else { exit 0 }
